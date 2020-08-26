@@ -13,11 +13,18 @@ text-align: center;
 padding: 2rem;
 border: 5px solid black;
 margin-top: 3rem;
+
 #Error{
     color:red;
     padding: 0;
 }
 
+label {
+	width: 40%;
+	display:flex;
+	flex-direction:column;
+	margin: 0 auto;
+}
 `
 
 const initialFormValues = {
@@ -106,9 +113,11 @@ const Login = () => {
   <FormDiv>
 	
 		<h2>Welcome to School in the Cloud</h2>
-		{/* <div className='errors'>
-                <div id='Error'>{errors.name}</div>
-            </div> */}
+		<div className='errors'>
+                <div id='Error'>{formErrors.name || formErrors.email || formErrors.password}</div>
+				{/* <div id='Error'>{formErrors.name}</div>
+				<div id='Error'>{formErrors.name}</div> */}
+            </div>
 
 			{/* <form onSubmit={onSubmit}> */}
 			<form>
@@ -117,7 +126,7 @@ const Login = () => {
                 <label>Name:
                     <input
                     type='text'
-                    // value={values.name}
+                    value={formValues.name}
                     placeholder='Type here...'
                     name='name'
                     onChange={onInputChange}
@@ -128,7 +137,7 @@ const Login = () => {
 				<label>Email:
                     <input
                     type='email'
-                    // value={name}
+                    value={formValues.email}
                     placeholder='Type here...'
                     name='email'
                     onChange={onInputChange}
@@ -139,7 +148,7 @@ const Login = () => {
 				<label>Password:
                     <input
                     type='password'
-                    // value={values.name}
+					value={formValues.password}
                     placeholder='Type here...'
                     name='password'
                     onChange={onInputChange}
@@ -150,7 +159,7 @@ const Login = () => {
                 <label htmlFor="role">Role:
                     <select
                     onChange={onInputChange}
-                    // value={values.size}
+                    value={formValues.role}
                     name='role'>
                         <option value=''>...Select</option>
                         <option value='student'>Student</option>
