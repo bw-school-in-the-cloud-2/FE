@@ -123,33 +123,33 @@ const Login = () => {
 			<form>
 
                 <div>
-                <label>Name:
+                <label>
                     <input
                     type='text'
                     value={formValues.name}
-                    placeholder='Type here...'
+                    placeholder='Enter Name...'
                     name='name'
                     onChange={onInputChange}
                     >
                     </input>
                 </label>
 
-				<label>Email:
+				<label>
                     <input
                     type='email'
                     value={formValues.email}
-                    placeholder='Type here...'
+                    placeholder='Enter Email...'
                     name='email'
                     onChange={onInputChange}
                     >
                     </input>
                 </label>
 
-				<label>Password:
+				<label>
                     <input
                     type='password'
 					value={formValues.password}
-                    placeholder='Type here...'
+                    placeholder='Enter Password...'
                     name='password'
                     onChange={onInputChange}
                     >
@@ -163,7 +163,7 @@ const Login = () => {
                     name='role'>
                         <option value=''>...Select</option>
                         <option value='student'>Student</option>
-                        <option value='teacher'>Teacher</option>
+                        <option value='volunteer'>Volunteer</option>
                         <option value='admin'>Admin</option>
                     </select>
                 </label>
