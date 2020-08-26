@@ -7,7 +7,7 @@ import PrivateRoute from './components/PrivateRoute';
 import { getVolunteers } from './actions/actions';
 import VolunteersList from './components/VolunteersList';
 
-import Login from './components/Login';
+import Login from './components/TempLogin';
 
 class App extends Component {
   // constructor(props) {
