@@ -5,7 +5,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 const Login = () => {
   const [login, setLogin] = useState({
     credentials: {
-      username: '',
+      email: '',
       password: ''
     }
   })
@@ -28,7 +28,7 @@ const Login = () => {
       .then(res => {
           console.log('NOW IN HERE')
         console.log(res);
-        localStorage.setItem('token', res.data.payload)
+        localStorage.setItem('token', JSON.stringify(res.data.token))
         history.push('/StudentMain')
       })
       .catch(err => console.log('Failed:', err))
@@ -41,8 +41,8 @@ const Login = () => {
       <form onSubmit={handleLoginSubmit}>
         <input
           type='text'
-          name='username'
-          value={login.credentials.username}
+          name='email'
+          value={login.credentials.email}
           onChange={handleLoginChanges}
         />
         <input

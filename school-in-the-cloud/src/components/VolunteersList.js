@@ -8,7 +8,7 @@ const VolunteersList = (props) => {
 
     return (
         <div>
-            I'm inside VolunteersList.
+            <p>Registered Volunteers</p>
             {props.volunteers.map(volunteer => {
             return <Volunteer volunteer={volunteer} key={volunteer.id} />
             })}

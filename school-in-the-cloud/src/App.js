@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './App.css';
@@ -10,9 +10,6 @@ import VolunteersList from './components/VolunteersList';
 import Login from './components/TempLogin';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   componentDidMount() {
     this.props.getVolunteers();
@@ -26,7 +23,6 @@ class App extends Component {
           <p>IN APP: SCHOOL IN THE CLOUD</p>
           <br />
           <br />
-          <VolunteersList />
           <Switch>
             <Route exact path='/' component={Login} />
             <PrivateRoute path='/StudentMain' component={VolunteersList} />

@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 
 import './index.css';
 import App from './App';
-import {initialState, volunteerReducer} from './reducers/volunteerReducer';
+import { volunteerReducer } from './reducers/volunteerReducer';
 // import * as serviceWorker from './serviceWorker';
 
 
@@ -21,7 +21,6 @@ ReactDOM.render(
     <App />
   </Provider >, document.getElementById('root')
 );
-
 
 
 
