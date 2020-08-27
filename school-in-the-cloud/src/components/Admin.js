@@ -3,6 +3,10 @@ ADMIN
     create and edit training 'tasks' for volunteers to complete
     saving 'task' to 'tasks' list will make it appear on volunteer's homepage
 
+    main page
+        -see volunteers
+        -create tasks list
+
 
     set up:
         =CREATE TO DO LIST COMPONENT
