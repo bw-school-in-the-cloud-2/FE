@@ -7,7 +7,7 @@ export const initialState = {
 };
 
 export const volunteerReducer = (state = initialState, action) => {
-    console.log('reducer', action);
+    console.log('volunteerReducer', action);
     switch (action.type) {
         case VOLUNTEERS_LOADING:
             return {
@@ -32,3 +32,4 @@ export const volunteerReducer = (state = initialState, action) => {
             return state;
     }
 };
+
