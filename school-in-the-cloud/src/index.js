@@ -4,19 +4,17 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 
-
-import { BrowserRouter as Router } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
-import { volunteerReducer } from './reducers/volunteerReducer';
+import { rootReducer } from './reducers';
 
 
 
 const store = createStore(
-  volunteerReducer,
+  rootReducer,
   applyMiddleware(thunk)
 );
 
@@ -26,4 +24,4 @@ ReactDOM.render(
   </Provider >, document.getElementById('root')
 );
 
-serviceWorker.unregister();
+// serviceWorker.unregister();

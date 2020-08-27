@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 import PrivateRoute from './components/PrivateRoute';
-import { getVolunteers } from './actions/actions';
+import { getVolunteers, retrieveTasks } from './actions/actions';
 import VolunteersList from './components/VolunteersList';
 
 import Login from './components/TempLogin'; //////////////////////TEMP LOGIN - DELETE/////////////
@@ -20,6 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getVolunteers();
+    this.props.retrieveTasks();
   }
 
   render() {
@@ -27,7 +28,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <h1>Welcome to School in the Cloud</h1>
-          <Route exact path='/'>
+          <Route exact path='/' >
             <Link to='/Signup'>
               <button id='SignUpBtn'>Sign Up</button>
             </Link>
@@ -40,7 +41,7 @@ class App extends Component {
           </Route>
 
           <Switch>
-            {/* <Route exact path='/' component={Login} /> //////////////////////////NOT NEEDED. DELETE. -- THIS ROUTE IS ABOVE///////////////////// */}
+            <Route exact path='/' component={Login} /> {/* //////////////////////////NOT NEEDED. DELETE. -- THIS ROUTE IS ABOVE///////////////////// */}
 
             <PrivateRoute path='AdminMain' />
             <PrivateRoute path='/StudentMain' component={VolunteersList} />
@@ -70,4 +71,4 @@ const mapStateToProps = state => {
   return state;
 }
 
-export default connect(mapStateToProps, { getVolunteers })(App);
+export default connect(mapStateToProps, { getVolunteers, retrieveTasks })(App);
