@@ -20,11 +20,17 @@ margin-top: 3rem;
 }
 
 label {
-	width: 40%;
+	width: 50%;
 	display:flex;
 	flex-direction:column;
 	margin: 0 auto;
+	padding: .5rem;
 }
+
+#submitBtn {
+	color:red;
+}
+
 `
 
 const initialFormValues = {
@@ -39,7 +45,7 @@ const initialFormErrors = {
   }
   const initialDisabled = true
 
-const SignUp = () => {
+const SignUpForm = () => {
 
 	const [user, setUser] = useState([])
 	const [formValues, setFormValues] = useState(initialFormValues)
@@ -157,8 +163,8 @@ const SignUp = () => {
                     >
                     </input>
                 </label>
-
-                <label htmlFor="role">Role:
+				
+                <label id='role' htmlFor="role">Role:
                     <select
                     onChange={onInputChange}
                     value={formValues.role}
@@ -184,4 +190,4 @@ const SignUp = () => {
     );
   }
   
-  export default SignUp;
+  export default SignUpForm;
