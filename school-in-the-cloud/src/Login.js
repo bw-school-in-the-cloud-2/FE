@@ -3,7 +3,7 @@ import Styled from 'styled-components'
 // import { Route, Link, Switch } from 'react-router-dom'
 import axios from 'axios'
 import * as yup from 'yup'
-import formSchema from './FormSchema'
+import loginSchema from './LoginSchema'
 
 
 const FormDiv = Styled.div`
@@ -28,10 +28,8 @@ label {
 `
 
 const initialFormValues = {
-	name: '',
 	email: '',
 	password: '',
-	role: '',
   }
 
 const initialFormErrors = {
@@ -61,7 +59,7 @@ const Login = () => {
 
 	  const inputChange = (name, value) => {
 		yup
-		  .reach(formSchema, name)
+		  .reach(loginSchema, name)
 		  .validate(value)
 		  .then(valid => {
 			setFormErrors({
@@ -88,10 +86,8 @@ const Login = () => {
 
 	  const submit = () => {
 		const newUser = {
-		  name: formValues.name.trim(),
 		  email: formValues.email.trim(),
 		  password: formValues.password.trim(),
-		  role: formValues.role.trim(),
 		}
 		postNewUser(newUser)
 	  }
@@ -103,7 +99,7 @@ const Login = () => {
 
 
 	  useEffect(() => {
-		formSchema.isValid(formValues).then(valid => {
+		loginSchema.isValid(formValues).then(valid => {
 		  setDisabled(!valid)
 		})
 	  }, [formValues])
@@ -112,9 +108,9 @@ const Login = () => {
     return (
   <FormDiv>
 	
-		<h2>Welcome to School in the Cloud</h2>
+		<h2>Welcome Back!</h2>
 		<div className='errors'>
-                <div id='Error'>{formErrors.name || formErrors.email || formErrors.password}</div>
+                <div id='Error'>{formErrors.email || formErrors.password}</div>
 				{/* <div id='Error'>{formErrors.name}</div>
 				<div id='Error'>{formErrors.name}</div> */}
             </div>
@@ -123,16 +119,7 @@ const Login = () => {
 			<form>
 
                 <div>
-                <label>
-                    <input
-                    type='text'
-                    value={formValues.name}
-                    placeholder='Enter Name...'
-                    name='name'
-                    onChange={onInputChange}
-                    >
-                    </input>
-                </label>
+                
 
 				<label>
                     <input
@@ -144,7 +131,7 @@ const Login = () => {
                     >
                     </input>
                 </label>
-
+				<br></br>
 				<label>
                     <input
                     type='password'
@@ -156,24 +143,12 @@ const Login = () => {
                     </input>
                 </label>
 
-                <label htmlFor="role">Role:
-                    <select
-                    onChange={onInputChange}
-                    value={formValues.role}
-                    name='role'>
-                        <option value=''>...Select</option>
-                        <option value='student'>Student</option>
-                        <option value='volunteer'>Volunteer</option>
-                        <option value='admin'>Admin</option>
-                    </select>
-                </label>
+                
                 </div>
 
                 <br></br>
-                <div>
-
-                </div>
-                <button disabled={disabled} onClick={onSubmit} id='submitBtn'>Sign Up</button>
+                
+                <button disabled={disabled} onClick={onSubmit} id='submitBtn'>Login</button>
             </form>
 
 	</FormDiv>
