@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-const formSchema = yup.object().shape({
+const SignUpSchema = yup.object().shape({
   name: yup
     .string()
     .max(18, "Name must be under 18 characters")
@@ -17,4 +17,4 @@ const formSchema = yup.object().shape({
     .required("role is required"),
 })
  
-export default formSchema
+export default SignUpSchema
