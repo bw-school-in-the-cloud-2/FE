@@ -1,30 +1,43 @@
-import React from 'react';
+// import React from 'react';
 
-const Volunteer = (props) => {
+// import VolunteerCard from './VolunteerCard';
+// import { useParams, useHistory } from 'react-router-dom';
 
-    const { name, country, email, availability } = props.volunteer
+// const Volunteer = () => {
 
-    return (
-        <div>
-            <br />
-            <div className='volunteer'>
-                <h5> Volunteer Name {name} </h5>
-                <p> Location: {country} </p>
-                <p> Email Contact: {email} </p>
-                <div> Availability: {
-                    availability.map(timeSlot => {
-                        return (
-                            <div key={timeSlot.id} >
-                                <p> {timeSlot.day} </p>
-                                <p> {timeSlot.time_start} - {timeSlot.time_end} </p>
-                            </div>
-                        )
-                    })
-                }
-                </div>
-            </div>
-        </div>
-    )
-}
+//     const params = useParams();
+//     const history = useHistory();
 
-export default Volunteer;
+//     //NEED ACTION
+//     //fetchVolunteer axiosWithAuth import and call
+
+//     // useEffect(() => {
+//     //     fetchVolunteer(params.id);
+//     // }, [params.id]);
+
+//     if (!volunteer) {
+//         return <div>Loading volunteer mentor information...</div>
+//     }
+
+//     return (
+//         <div>
+//             <VolunteerCard volunteer={volunteer} />
+//             {/* 
+// ////////////////////////////////FLEX ////////////////////////////////// 
+//     <button>
+//         schedule to meet volunteer mentor
+//     </button>
+// */}
+//             {/* 
+//             /////////not required////////////
+//             <button>
+//                 back to main list
+//             </button> */}
+//         </div>
+
+//     )
+
+
+
+
+// };
