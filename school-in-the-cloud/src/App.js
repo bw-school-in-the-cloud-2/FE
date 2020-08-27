@@ -8,6 +8,7 @@ import { getVolunteers } from './actions/actions';
 import VolunteersList from './components/VolunteersList';
 
 import Login from './components/TempLogin';
+import LoginForm from './Login'
 
 class App extends Component {
 
@@ -27,6 +28,9 @@ class App extends Component {
             <Route exact path='/' component={Login} />
             <PrivateRoute path='/StudentMain' component={VolunteersList} />
           </Switch>
+      <LoginForm>
+  
+</LoginForm>
         </div>
       </Router>
     );
