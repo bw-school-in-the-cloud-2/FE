@@ -5,7 +5,10 @@ const Confirmation = () => {
 
 return(
         <div>
-            <h1>Thank you for signing up!</h1>
+            <br></br>
+            <h2>Thank you for signing up!</h2>
+            <br></br>
+            <h2>Please check your email at </h2>
         </div>
     )
 

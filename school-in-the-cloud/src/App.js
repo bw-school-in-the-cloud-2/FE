@@ -4,6 +4,7 @@ import { Link, Route, Switch} from 'react-router-dom'
 import LoginForm from './Login'
 import SignUpForm from './Signup'
 import Confirmation from './Confirmation';
+import WelcomeBack from './WelcomeBack'
 import Styled from 'styled-components'
 // import MainAppImg from '../images/Main_App_Picture'
 
@@ -20,11 +21,11 @@ text-align: center;
 box-shadow: 0 0 20px #000;
 position: absolute; 
     left: 500px; 
-    top: 200px; 
+    top: 150px; 
     z-index: 0;
 
     h1{
-      font-size:38px;
+      font-size:44px;
     }
 
     #SignUpBtn, #LoginBtn{
@@ -69,17 +70,18 @@ position: absolute;
       font-size: 1.25rem;
       line-height: 1.5rem;
     }
+
+    h2{
+      margin-top: 0px;
+      font-size: 28px;
+    }
+
 `
 const AppBackground = Styled.div `
 // background-image: url("https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
 // background-image: url("https://images.unsplash.com/photo-1536532184021-da5392b55da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE0MjB9&auto=format&fit=crop&w=1350&q=80");
 // background-image: url("https://images.unsplash.com/photo-1528157509193-8254fac59543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
 background-image: url('https://i.ibb.co/w0tPr07/App-Picture-Edited-Bright.jpg');
-
-
-
- 
-
 
 background-repeat: no-repeat;
    height: 100vh;
@@ -119,9 +121,14 @@ function App() {
       <LoginForm/>
       </Route>
 
+      <Route path='/welcomeback' component={WelcomeBack}>
+      <WelcomeBack/>
+      </Route>
+      
       <Route path='/confirmation' component={Confirmation}>
       <Confirmation/>
       </Route>
+      
 
       </Switch>
 
