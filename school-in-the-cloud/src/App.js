@@ -41,7 +41,8 @@ class App extends Component {
           </Route>
 
           <Switch>
-            <Route exact path='/' component={Login} /> {/* //////////////////////////NOT NEEDED. DELETE. -- THIS ROUTE IS ABOVE///////////////////// */}
+            {/* <Route exact path='/' component={Login} /> */}
+            {/* //////////////////////////NOT NEEDED. DELETE. -- THIS ROUTE IS ABOVE///////////////////// */}
 
             <PrivateRoute path='AdminMain' />
             <PrivateRoute path='/StudentMain' component={VolunteersList} />
