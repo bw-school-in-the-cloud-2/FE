@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Smurf from './Smurf';
 import { updateSmurf, deleteSmurf } from '../actions/actions';
 
-const initialSmurf = {
+const initialState = {
     name: '',
     age: '',
     height: ''
@@ -14,9 +14,9 @@ const SmurfList = (props) => {
     console.log(props)
 
     const [editing, setEditing] = useState(false)
-    const [smurfToEdit, setSmurfToEdit] = useState(initialSmurf)
+    const [smurfToEdit, setSmurfToEdit] = useState(initialState)
 
-    
+
     const editSmurf = smurf => {
         setEditing(true);
         setSmurfToEdit(smurf)
@@ -65,7 +65,7 @@ const SmurfList = (props) => {
                     </label>
                     <label>
                         age:
-                                    <input onChange={e =>
+                    <input onChange={e =>
                             setSmurfToEdit({
                                 ...smurfToEdit,
                                 age: e.target.value
@@ -97,8 +97,8 @@ const SmurfList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        smurfs: state.smurfReducer.smurfs
+        smurfs: state.smurfReducer.smurfs,
     }
 }
 
-export default connect(mapStateToProps, {updateSmurf, deleteSmurf})(SmurfList);
+export default connect(mapStateToProps, { updateSmurf, deleteSmurf })(SmurfList);

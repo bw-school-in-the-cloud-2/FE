@@ -64,7 +64,7 @@ class SmurfForm extends React.Component {
 }
 
 const mapStateToProps = state => {
-return state.smurfReducer
+    return state.smurfReducer
 }
 
 export default connect(mapStateToProps, { addSmurf })(SmurfForm);

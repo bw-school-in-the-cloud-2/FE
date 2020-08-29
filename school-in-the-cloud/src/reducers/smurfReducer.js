@@ -16,19 +16,28 @@ export const smurfReducer = (state = initialState, action) => {
                 error: ''
             };
         case ADD_SMURF:
+        case UPDATE_SMURF:
+        case DELETE_SMURF:
             return {
                 ...state,
                 smurfs: [...state.smurfs, action.payload],
                 loading: false,
                 error: ''
             };
-        case UPDATE_SMURF:
-            return {
-                smurfs: [...state.smurfs, action.payload],
-                loading: false,
-                error: ''
-            }
+        // case UPDATE_SMURF:
+        //     return {
+        //         ...state,
+        //         smurfs: [...state.smurfs, action.payload],
+        //         loading: false,
+        //         error: ''
+        //     }
         // case DELETE_SMURF:
+        //     return {
+        //         ...state,
+        //         smurfs: [...state.smurfs, action.payload],
+        //         loading: false,
+        //         error: ''
+        //     }
         case SUCCESS:
             return {
                 ...state,
