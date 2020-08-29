@@ -1,17 +1,17 @@
 import React from 'react';
 
 const VolunteerCard = (props) => {
-
-    const { name, country, email, availability } = props.volunteer
+    console.log(props)
+    const { name/*, country, email, availability*/ } = props.volunteer
 
     return (
         <div>
             <br />
             <div className='volunteer' style={{ border: "1px solid black" }} >
-                <h5> {name} </h5>
-                <p> Location: {country} </p>
-                <p> Email Contact: {email} </p>
-                <div> Availability: {
+                <h5>{name} </h5>
+                {/* <p> Location: {country} </p>
+                <p> Email Contact: {email} </p> */}
+                {/* <div> Availability: {
                     availability.map(timeSlot => {
                         return (
                             <div key={timeSlot.id} >
@@ -21,7 +21,7 @@ const VolunteerCard = (props) => {
                         )
                     })
                 }
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import VolunteerCard from './VolunteerCard';
+// import VolunteerCard from './VolunteerCard';
 
 const VolunteersList = (props) => {
-    console.log(props);
+    console.log(props)
 
     return (
         <div>
 
-            <p>Registered Volunteers</p>
+            <h3>Registered Volunteers</h3>
 
-            {props.volunteers.map(volunteer => {
+            {/* {props.volunteers.map(volunteer => {
                 return <VolunteerCard volunteer={volunteer} key={volunteer.id} />
-            })}
+            })} */}
         </div>
     );
 };
@@ -25,6 +25,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {})(VolunteersList);
-
-
-///////////// NEED TO CREATE FILTER --> BY COUNTRY.... BY AVAILABILITY //////////////////

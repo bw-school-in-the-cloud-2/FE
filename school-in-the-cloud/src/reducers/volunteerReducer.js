@@ -5,9 +5,8 @@ export const initialState = {
     error: '',
     loading: false
 };
-
 export const volunteerReducer = (state = initialState, action) => {
-    console.log('volunteerReducer', action);
+    // console.log('VOLUNTEER REDUCER', action);
     switch (action.type) {
         case VOLUNTEERS_LOADING:
             return {
@@ -32,4 +31,3 @@ export const volunteerReducer = (state = initialState, action) => {
             return state;
     }
 };
-
